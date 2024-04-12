@@ -1,0 +1,19 @@
+[project]
+name = "lidl-to-grocy"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Christian Ohde", email = "christian.s1989@gmail.com"},
+]
+dependencies = [
+    "lidl-plus>=0.3.5",
+    "typer>=0.12.3",
+    "requests>=2.31.0",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
