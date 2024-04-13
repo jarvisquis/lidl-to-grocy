@@ -1,7 +1,7 @@
 [project]
 name = "lidl-to-grocy"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Provides a CLI application that syncs purchased products from Lidl receipt (via Lidl Plus App) to Grocy (and Barcode Buddy)"
 authors = [
     {name = "Christian Ohde", email = "christian.s1989@gmail.com"},
 ]
@@ -9,11 +9,23 @@ dependencies = [
     "lidl-plus>=0.3.5",
     "typer>=0.12.3",
     "requests>=2.31.0",
+    "pydantic>=2.7.0",
 ]
-requires-python = "==3.12.*"
+requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.scripts]
+lidl-to-grocy = "lidl_to_grocy.app:app"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [tool.pdm]
-distribution = false
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipython>=8.23.0",
+]
